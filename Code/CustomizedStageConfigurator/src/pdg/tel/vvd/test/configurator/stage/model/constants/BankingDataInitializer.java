@@ -47,10 +47,18 @@ public class BankingDataInitializer {
 	}
 
 	public void setBankingNaturalPersonClientsData() {
-		Random numAleatorio=new Random();
-		int randomNumber=numAleatorio.nextInt(4)+1;
+		Random numAleatorio = new Random();
+		int randomDPTNumber = numAleatorio.nextInt(5) + 1;
+		int randomVDNumber = numAleatorio.nextInt(10) + 1;
+		int randomDTNumber = numAleatorio.nextInt(5) + 1;
 		for (int i = 0; i < BankingData.BANKING_DATA_IDENTIFICATIONS.length; i++) {
-			clients.agregarElemento(BankingData.BANKING_DATA_IDENTIFICATIONS[i], new BankingClient(BankingData.BANKING_DATA_IDENTIFICATIONS[i], BankingData.BANKING_DATA_NAMES[i], BankingData.BANKING_DATA_LAST_NAMES[i], "", BankingData.BANKING_DATA_VERIFICATION_DIGITS[i], BankingData.BANKING_DATA_DOCUMENT_TYPES[i], BankingData.BANKING_DATA_PERSON_TYPES[1], BankingData.BANKING_DATA_COUNTRIES[0], BankingData.BANKING_DATA_DEPARTMENTS[numAleatorio.nextInt(4)+1], BankingData.BANKING_DATA_DEPARTMENTS[randomNumber], add)
+			clients.agregarElemento(BankingData.BANKING_DATA_IDENTIFICATIONS[i],
+					new BankingClient(BankingData.BANKING_DATA_IDENTIFICATIONS[i], BankingData.BANKING_DATA_NAMES[i],
+							BankingData.BANKING_DATA_LAST_NAMES[i], "", BankingData.BANKING_DATA_VERIFICATION_DIGITS[randomVDNumber],
+							BankingData.BANKING_DATA_DOCUMENT_TYPES[randomDTNumber], BankingData.BANKING_DATA_PERSON_TYPES[1],
+							BankingData.BANKING_DATA_COUNTRIES[0],
+							BankingData.BANKING_DATA_DEPARTMENTS[randomDPTNumber],
+							BankingData.BANKING_DATA_TOWNS[randomDPTNumber], BankingData.BANKING_DATA_ADDRESSES[i]));
 		}
 	}
 
