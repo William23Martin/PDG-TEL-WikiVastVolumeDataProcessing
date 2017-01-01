@@ -10,12 +10,11 @@ package pdg.tel.vvd.test.configurator.stage.model.bankmodel;
  */
 public class BankingTransaction {
 
-	private BankingAccount account;
+	
 	private String type;
 	private String value;
 	
-	public BankingTransaction(BankingAccount acc,String type, String value){
-		this.account= acc;
+	public BankingTransaction(String type, String value){
 		this.type=type;
 		this.value=value;
 	}
