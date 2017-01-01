@@ -125,6 +125,4 @@ public class BankingClient {
 		this.address = address;
 	}
 
-	
-	
 }

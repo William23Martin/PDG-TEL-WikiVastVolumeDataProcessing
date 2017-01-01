@@ -47,7 +47,7 @@ public class BankingDataInitializer {
 	public void setBankingClientsData() {
 		for (int i = 0; i < BankingData.BANKING_DATA_IDENTIFICATIONS.length; i++) {
 			clients.agregarElemento(BankingData.BANKING_DATA_IDENTIFICATIONS[i],
-					new Client(BankingData.BANKING_DATA_[i], arg1, arg2, arg3, arg4));
+					new Client(BankingData.BANKING_DATA_NAMES[i], BankingData.BANKING_DATA_LAST_NAMES[i], arg2, arg3, arg4));
 		}
 	}
 
