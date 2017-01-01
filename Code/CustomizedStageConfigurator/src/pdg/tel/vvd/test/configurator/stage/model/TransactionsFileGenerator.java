@@ -7,6 +7,8 @@ import java.util.Calendar;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
+import pdg.tel.vvd.test.configurator.stage.model.constants.BankingData;
+
 /**
  *MovementsFileGenerator is the java class that get the
  *configuration parameters and write a file with
@@ -50,7 +52,7 @@ public class TransactionsFileGenerator {
 		int j = 0;
 		while (j<=limite) {
 			Random numAleatorio=new Random();
-			String pais= paises[numAleatorio.nextInt(4)+1]+"|";
+			String pais= BankingData.BANKING_DATA_COUNTRIES[numAleatorio.nextInt(4)+1]+"|";
 			String tdoc= tdocs[numAleatorio.nextInt(4)+1]+"|";
 			String tper =  tiposPersona[numAleatorio.nextInt(2)]+"|";
 			String prenid = String.valueOf(numAleatorio.nextInt(1107082726)+1);
