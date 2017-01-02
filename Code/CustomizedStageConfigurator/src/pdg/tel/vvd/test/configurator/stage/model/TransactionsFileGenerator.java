@@ -33,7 +33,7 @@ public class TransactionsFileGenerator {
 	 * File that will be written.
 	 */
 	private static File file;
-	
+
 	/**
 	 * Test Banking Data Initializer Object
 	 */
@@ -84,17 +84,17 @@ public class TransactionsFileGenerator {
 			String dv = bankingClient.getVerificationDigit() + separator;
 			String apl1 = bankingClient.getLastName().split(" ")[0] + separator;
 			String apl2 = bankingClient.getLastName().split(" ")[1] + separator;
-			String nom1 = bankingClient.getLastName().split(" ")[0] + separator;
-			String nom2 = bankingClient.getLastName().split(" ")[1] + separator;
-			String raz = (tper == "PN|") ? separator
-					: String.valueOf(nom1.split(separator)[1]) + " " + String.valueOf(nom2.split(separator)[0]) + " "
-							+ String.valueOf(apl1.split(separator)[0]) + " " + String.valueOf(apl2.split(separator)[0])
-							+ " " + separator;
-			String dpto = (pais == "COL|") ? bankingClient.getDepartment() + separator : separator;
-			String mun = (pais == "COL|") ? bankingClient.getTown() + separator : separator;
+			String nom1 = bankingClient.getName().split(" ")[0] + separator;
+			String nom2 = bankingClient.getName().split(" ")[1] + separator;
+			String dpto = (pais.equals(BankingData.BANKING_DATA_COUNTRIES[0] + separator))
+					? bankingClient.getDepartment() + separator : separator;
+			String mun = (pais.equals(BankingData.BANKING_DATA_COUNTRIES[0] + separator))
+					? bankingClient.getTown() + separator : separator;
+			String dir = (pais.equals(BankingData.BANKING_DATA_COUNTRIES[0] + separator))
+					? bankingClient.getAddress() + separator : separator;
 			String cta = bankingAccount.getNumber() + separator;
 			String tipcta = bankingAccount.getType() + separator;
-			String tipoOperacion = BankingData.BANKING_DATA_TRANSACTION_TYPE[randomNumber.nextInt(1) + 1] + separator;
+			String tipoOperacion = BankingData.BANKING_DATA_TRANSACTION_TYPE[(int) (Math.random() * 2)] + separator;
 			// ----------------------------
 			// Date--------------------------------
 			// From:http://www.aprenderaprogramar.com/foros/index.php?topic=948.0
@@ -110,9 +110,9 @@ public class TransactionsFileGenerator {
 			// ----------------------------
 
 			try {
-				writer.print(j + "|" + fecha + tipcta + pais + tdoc + apl1 + apl2 + nom1 + nom2 + raz + mun + dpto + cta
-						+ tipcta + tper + dv + nid + tipoOperacion + transaction);
-				writer.println("|");
+				writer.print(j + separator + fecha + tipcta + pais + tdoc + apl1 + apl2 + nom1 + nom2 + mun + dpto + dir
+						+ cta + tipcta + tper + dv + nid + tipoOperacion + transaction);
+				writer.println(separator);
 				j++;
 
 			} catch (Exception e) {
