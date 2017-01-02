@@ -55,7 +55,7 @@ public class TransactionsFileGenerator {
 
 		System.out.println("File parameters initializing...");
 
-		file = new File("C:/Users/WMC/Desktop/ArchivoCuentas2.TXT");
+		file = new File("C:/Users/WMC/Desktop/BankingTransactionsFile2015-2016.TXT");
 
 		try {
 			writer = new PrintWriter(file);
