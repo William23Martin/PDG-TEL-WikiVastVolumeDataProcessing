@@ -41,10 +41,11 @@ public class BankingDataInitializer {
 	 * Method that initialize the clients HashTable with clients information.
 	 */
 	public void setBankingNaturalPersonClientsData() {
+		Random randomNumber=new Random();
 		for (int i = 0; i < BankingData.BANKING_DATA_IDENTIFICATIONS.length; i++) {
-			int randomDPTNumber = (int)Math.random() * 5;//0-4
-			int randomVDNumber = (int)Math.random() * 11;//0-10
-			int randomDTNumber = (int)Math.random() * 5;//0-4
+			int randomDPTNumber = randomNumber.nextInt(4);//0-4
+			int randomVDNumber = randomNumber.nextInt(10);//0-10
+			int randomDTNumber = randomNumber.nextInt(4);//0-4
 			clients.put(BankingData.BANKING_DATA_IDENTIFICATIONS[i],
 					new BankingClient(BankingData.BANKING_DATA_IDENTIFICATIONS[i], BankingData.BANKING_DATA_NAMES[i],
 							BankingData.BANKING_DATA_LAST_NAMES[i], "",
@@ -60,11 +61,11 @@ public class BankingDataInitializer {
 	 * Method that initialize the accounts HashTable with accounts information.
 	 */
 	public void setBankingAccountsData() {
-		Random numAleatorio=new Random();
+		Random randomNumber=new Random();
 		for (int i = 0; i < BankingData.BANKING_DATA_IDENTIFICATIONS.length; i++) {
-			int randomATYNumber = (int)Math.random() * 2;//0-1
-			int randomCODEXGMFNumber = (int)Math.random() * 2;//0-1
-			String randomInitBalance=String.valueOf(numAleatorio.nextInt(10000000));
+			int randomATYNumber = randomNumber.nextInt(2);//0-1
+			int randomCODEXGMFNumber = randomNumber.nextInt(2);//0-1
+			String randomInitBalance=String.valueOf(randomNumber.nextInt(10000000));
 			String accountNumber=BankingData.BANKING_DATA_ACCOUNT_NUMBERS[i];
 			BankingClient actualBankingClient=(BankingClient) clients.remove(BankingData.BANKING_DATA_IDENTIFICATIONS[i]);
 			BankingAccount newAccount=new BankingAccount(BankingData.BANKING_DATA_ACCOUNT_TYPES[randomATYNumber], accountNumber, BankingData.BANKING_DATA_CODEX_TYPES[randomCODEXGMFNumber], randomInitBalance,actualBankingClient);

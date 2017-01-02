@@ -42,10 +42,13 @@ public class TransactionsFileGenerator {
 	public static void main(String args[]) {
 
 		// File Size Limit initialization:
-		int deafultTransactionsNumber = 2000;
-		int defaultUserTransactionsNumber = Integer.parseInt(JOptionPane.showInputDialog(
-				"Introduzca el número de transacciones que debe tener su archivo de transacciones.\nNOTA: Por defecto serán 72 millones.\nSólo se permiten valores enteros y terminados en miles."));
-		String limit = String.valueOf(defaultUserTransactionsNumber);
+		int deafultTransactionsNumber = 24*12*100*2;//(Months in two years)*(#BankingAccounts)*(#OneSheetExtractTransactions)*(#OneSheetExtractAveragePerNaturalPersonAccount)
+		int mode = Integer.parseInt(JOptionPane.showInputDialog(
+				"Introduzca un 1 si es desea la generación automática\no 2 si la desea manual."));
+		if(mode==2){//Si es automática
+			deafultTransactionsNumber = Integer.parseInt(JOptionPane.showInputDialog(
+					"Introduzca el número de transacciones que debe tener su archivo de transacciones.\nNOTA: Por defecto serán 72 millones.\nSólo se permiten valores enteros y terminados en miles."));
+		}
 		String separator = JOptionPane.showInputDialog("Input one caracter for separate every data in the file");
 		// ------------------------
 
@@ -55,7 +58,7 @@ public class TransactionsFileGenerator {
 
 		System.out.println("File parameters initializing...");
 
-		file = new File("C:/Users/WMC/Desktop/BankingTransactionsFile2015-2016.TXT");
+		file = new File("C:/Users/WMC/Desktop/BankingTransactionsTestData2015-2016.TXT");
 
 		try {
 			writer = new PrintWriter(file);
@@ -69,7 +72,7 @@ public class TransactionsFileGenerator {
 
 		Random randomNumber = new Random();
 		int j = 0;
-		while (j <= ((limit == null) ? deafultTransactionsNumber : defaultUserTransactionsNumber)) {
+		while (j <= deafultTransactionsNumber) {
 			int accountNumber = randomNumber.nextInt(11);
 			BankingAccount bankingAccount = (BankingAccount) testBankingDataInitializer.getAccounts()
 					.get(BankingData.BANKING_DATA_ACCOUNT_NUMBERS[accountNumber]);
@@ -94,6 +97,7 @@ public class TransactionsFileGenerator {
 					? bankingClient.getAddress() + separator : separator;
 			String cta = bankingAccount.getNumber() + separator;
 			String tipcta = bankingAccount.getType() + separator;
+			String codex = bankingAccount.getCodex() + separator;
 			String tipoOperacion = BankingData.BANKING_DATA_TRANSACTION_TYPE[(int) (Math.random() * 2)] + separator;
 			// ----------------------------
 			// Date--------------------------------
@@ -110,8 +114,8 @@ public class TransactionsFileGenerator {
 			// ----------------------------
 
 			try {
-				writer.print(j + separator + fecha + tipcta + pais + tdoc + apl1 + apl2 + nom1 + nom2 + mun + dpto + dir
-						+ cta + tipcta + tper + dv + nid + tipoOperacion + transaction);
+				writer.print(j + separator + fecha + tipcta + codex + pais + tdoc + apl1 + apl2 + nom1 + nom2 + mun
+						+ dpto + dir + cta + tper + dv + nid + tipoOperacion + transaction);
 				writer.println(separator);
 				j++;
 
