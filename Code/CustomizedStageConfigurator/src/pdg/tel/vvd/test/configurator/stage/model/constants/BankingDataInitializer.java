@@ -42,9 +42,9 @@ public class BankingDataInitializer {
 	 */
 	public void setBankingNaturalPersonClientsData() {
 		Random numAleatorio = new Random();
-		int randomDPTNumber = numAleatorio.nextInt(5) + 1;
+		int randomDPTNumber = numAleatorio.nextInt(4) + 1;
 		int randomVDNumber = numAleatorio.nextInt(10) + 1;
-		int randomDTNumber = numAleatorio.nextInt(5) + 1;
+		int randomDTNumber = numAleatorio.nextInt(3) + 1;
 		for (int i = 0; i < BankingData.BANKING_DATA_IDENTIFICATIONS.length; i++) {
 			clients.put(BankingData.BANKING_DATA_IDENTIFICATIONS[i],
 					new BankingClient(BankingData.BANKING_DATA_IDENTIFICATIONS[i], BankingData.BANKING_DATA_NAMES[i],
@@ -62,8 +62,8 @@ public class BankingDataInitializer {
 	 */
 	public void setBankingAccountsData() {
 		Random numAleatorio = new Random();
-		int randomATYNumber = numAleatorio.nextInt(2) + 1;
-		int randomCODEXGMFNumber = numAleatorio.nextInt(2) + 1;
+		int randomATYNumber = numAleatorio.nextInt(1) + 1;
+		int randomCODEXGMFNumber = numAleatorio.nextInt(1) + 1;
 		String randomInitBalance=String.valueOf(numAleatorio.nextInt(10000000) + 1);
 		for (int i = 0; i < BankingData.BANKING_DATA_IDENTIFICATIONS.length; i++) {
 			String accountNumber=BankingData.BANKING_DATA_ACCOUNT_NUMBERS[i];
