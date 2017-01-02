@@ -42,9 +42,11 @@ public class TransactionsFileGenerator {
 	public static void main(String args[]) {
 
 		// File Size Limit initialization:
-		int deafultTransactionsNumber = 24*12*100*2;//(Months in two years)*(#BankingAccounts)*(#OneSheetExtractTransactions)*(#OneSheetExtractAveragePerNaturalPersonAccount)
+		int deafultTransactionsNumber = 12*12*100*2;//(Months in a year)*(#BankingAccounts)*(#OneSheetExtractTransactions)*(#OneSheetExtractAveragePerNaturalPersonAccount)
 		int mode = Integer.parseInt(JOptionPane.showInputDialog(
 				"Introduzca un 1 si es desea la generación automática\no 2 si la desea manual."));
+		int imputYear = Integer.parseInt(JOptionPane.showInputDialog(
+				"Introduzca el año de generación de los datos de prueba."));
 		if(mode==2){//Si es automática
 			deafultTransactionsNumber = Integer.parseInt(JOptionPane.showInputDialog(
 					"Introduzca el número de transacciones que debe tener su archivo de transacciones.\nNOTA: Por defecto serán 72 millones.\nSólo se permiten valores enteros y terminados en miles."));
@@ -58,7 +60,7 @@ public class TransactionsFileGenerator {
 
 		System.out.println("File parameters initializing...");
 
-		file = new File("C:/Users/WMC/Desktop/BankingTransactionsTestData2015-2016.TXT");
+		file = new File("C:/Users/WMC/Desktop/BankingTransactionsTestData"+imputYear+".TXT");
 
 		try {
 			writer = new PrintWriter(file);
@@ -104,8 +106,8 @@ public class TransactionsFileGenerator {
 			// From:http://www.aprenderaprogramar.com/foros/index.php?topic=948.0
 			SimpleDateFormat formato = new SimpleDateFormat("yyyy|MM|dd|HH:mm:ss");
 			Calendar objFecha = Calendar.getInstance();
-			objFecha.set(randomNumber.nextInt(1) + 2015, randomNumber.nextInt(12) + 1, randomNumber.nextInt(30) + 1,
-					randomNumber.nextInt(24) + 1, randomNumber.nextInt(59) + 1, randomNumber.nextInt(59) + 1);
+			objFecha.set(imputYear, randomNumber.nextInt(11) + 1, randomNumber.nextInt(29) + 1,
+					randomNumber.nextInt(23) + 1, randomNumber.nextInt(58) + 1, randomNumber.nextInt(40) + 1);
 			String fecha = formato.format(objFecha.getTime()) + separator;
 			// --------------------------------------
 			// Test Transation data:
