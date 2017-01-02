@@ -1,20 +1,23 @@
 package pdg.tel.vvd.test.configurator.stage.model.bankmodel;
 
 /**
- * @author William Martín Chávez González. 
- * Systems Engineer and Communications Engineering Student.
- * Icesi University, Cali, Colombia.
+ * @author William Martín Chávez González. Systems Engineer and Communications
+ *         Engineering Student. Icesi University, Cali, Colombia.
  */
 public class BankingAccount {
 
 	private String type;
 	private String number;
 	private String codex;
-	
-	public BankingAccount(String type, String num, String cdx){
-		this.type=type;
-		this.number=num;
-		this.codex=cdx;
+	private String initBalance;
+	private BankingClient owner;
+
+	public BankingAccount(String type, String num, String cdx, String initBalance, BankingClient owner) {
+		this.type = type;
+		this.number = num;
+		this.codex = cdx;
+		this.initBalance = initBalance;
+		this.owner=owner;
 	}
 
 	public String getType() {
@@ -40,6 +43,21 @@ public class BankingAccount {
 	public void setCodex(String codex) {
 		this.codex = codex;
 	}
-	
-	
+
+	public String getInitBalance() {
+		return initBalance;
+	}
+
+	public void setInitBalance(String initBalance) {
+		this.initBalance = initBalance;
+	}
+
+	public BankingClient getOwner() {
+		return owner;
+	}
+
+	public void setOwner(BankingClient owner) {
+		this.owner = owner;
+	}
+
 }
