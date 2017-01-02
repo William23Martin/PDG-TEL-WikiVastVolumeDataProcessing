@@ -37,10 +37,10 @@ public class TransactionsFileGenerator {
 	public static void main(String args[]) {
 
 		// File Size Limit initialization:
-		int limiteTransaccionesPorDefecto = 72000000;
-		int limiteTransaccionesUsuario = Integer.parseInt(JOptionPane.showInputDialog(
+		int deafultTransactionsNumber = 72000000;
+		int defaultUserTransactionsNumber = Integer.parseInt(JOptionPane.showInputDialog( 
 				"Introduzca el número de transacciones que debe tener su archivo de transacciones.\nNOTA: Por defecto serán 72 millones.\nSólo se permiten valores enteros y terminados en miles."));
-		String limite = String.valueOf(limiteTransaccionesUsuario);
+		String limit = String.valueOf(defaultUserTransactionsNumber);
 		// ------------------------
 
 		// Test Banking Data Initializer Object:
@@ -63,7 +63,7 @@ public class TransactionsFileGenerator {
 		
 		Random randomNumber = new Random();
 		int j = 0;
-		while (j <= ((limite == null) ? limiteTransaccionesPorDefecto : limiteTransaccionesUsuario)) {
+		while (j <= ((limit == null) ? deafultTransactionsNumber : defaultUserTransactionsNumber)) {
 			int accountNumber=randomNumber.nextInt(12)+1;
 			BankingAccount bankingAccount=(BankingAccount)testBankingDataInitializer.getAccounts().get(accountNumber);
 			BankingClient bankingClient=bankingAccount.getOwner();
