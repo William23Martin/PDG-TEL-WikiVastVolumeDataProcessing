@@ -28,5 +28,12 @@ public enum XML1019FileConstants {
 																// restriction.
 	public final static String ARCHIVO_ENCABEZADO_ELEMENTO = "Cab";// Attachment
 																	// restriction.
-
+	public final static String ARCHIVO_ENCABEZADO_FORMATO_ANIO = "AAAA";// Attachment
+	// restriction.
+	public final static String ARCHIVO_ENCABEZADO_FORMATO_FECHA_ENVIO = "AAAA-MM-DDTHH:MM:SS";// Attachment
+	// restriction.
+	public final static String ARCHIVO_ENCABEZADO_FORMATO_FECHA_INICIAL = "AAAA-MM-DD";// Attachment
+	// restriction.
+	public final static String ARCHIVO_ENCABEZADO_FORMATO_FECHA_FINAL = "AAAA-MM-DD";// Attachment
+	// restriction.
 }
