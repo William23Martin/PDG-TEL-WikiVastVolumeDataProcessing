@@ -117,82 +117,152 @@ public class XML1019Header {
 		// restriction.
 	}
 
+	/**
+	 * @return the year
+	 */
 	public Integer getYear() {
 		return year;
 	}
 
+	/**
+	 * @param year
+	 *            the year to set
+	 */
 	public void setYear(Integer year) {
 		this.year = year;
 	}
 
+	/**
+	 * @return the cptCode
+	 */
 	public Integer getCptCode() {
 		return CptCode;
 	}
 
+	/**
+	 * @param cptCode
+	 *            the cptCode to set
+	 */
 	public void setCptCode(Integer cptCode) {
 		CptCode = cptCode;
 	}
 
+	/**
+	 * @return the format
+	 */
 	public Integer getFormat() {
 		return format;
 	}
 
+	/**
+	 * @param format
+	 *            the format to set
+	 */
 	public void setFormat(Integer format) {
 		this.format = format;
 	}
 
+	/**
+	 * @return the version
+	 */
 	public Integer getVersion() {
 		return version;
 	}
 
+	/**
+	 * @param version
+	 *            the version to set
+	 */
 	public void setVersion(Integer version) {
 		this.version = version;
 	}
 
+	/**
+	 * @return the shippingNumber
+	 */
 	public Integer getShippingNumber() {
 		return shippingNumber;
 	}
 
+	/**
+	 * @param shippingNumber
+	 *            the shippingNumber to set
+	 */
 	public void setShippingNumber(Integer shippingNumber) {
 		this.shippingNumber = shippingNumber;
 	}
 
+	/**
+	 * @return the shippingDate
+	 */
 	public Calendar getShippingDate() {
 		return shippingDate;
 	}
 
+	/**
+	 * @param shippingDate
+	 *            the shippingDate to set
+	 */
 	public void setShippingDate(Calendar shippingDate) {
 		this.shippingDate = shippingDate;
 	}
 
+	/**
+	 * @return the initialDate
+	 */
 	public Calendar getInitialDate() {
 		return initialDate;
 	}
 
+	/**
+	 * @param initialDate
+	 *            the initialDate to set
+	 */
 	public void setInitialDate(Calendar initialDate) {
 		this.initialDate = initialDate;
 	}
 
+	/**
+	 * @return the finalDate
+	 */
 	public Calendar getFinalDate() {
 		return finalDate;
 	}
 
+	/**
+	 * @param finalDate
+	 *            the finalDate to set
+	 */
 	public void setFinalDate(Calendar finalDate) {
 		this.finalDate = finalDate;
 	}
 
+	/**
+	 * @return the totalValue
+	 */
 	public Double getTotalValue() {
 		return totalValue;
 	}
 
+	/**
+	 * @param totalValue
+	 *            the totalValue to set
+	 */
 	public void setTotalValue(Double totalValue) {
 		this.totalValue = totalValue;
 	}
 
+	/**
+	 * @return the numberOfRegisters
+	 */
 	public Integer getNumberOfRegisters() {
 		return numberOfRegisters;
 	}
 
+	/**
+	 * @param numberOfRegisters
+	 *            the numberOfRegisters to set
+	 */
 	public void setNumberOfRegisters(Integer numberOfRegisters) {
 		this.numberOfRegisters = numberOfRegisters;
 	}
