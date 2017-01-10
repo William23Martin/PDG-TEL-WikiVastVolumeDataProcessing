@@ -1,7 +1,7 @@
 /**
  * 
  */
-package pdg.tel.vvd.test.usecase.requirement.xml1019file.model.structure;
+package pdg.tel.vvd.test.usecase.requirement.xml1019file.model.file.structure;
 
 import java.util.Calendar;
 
@@ -71,10 +71,20 @@ public class XML1019Header {
 	 * the content. Type:int, Length:4. 5000 registers per XML file as maximum.
 	 * Attachment restriction.
 	 */
-	private Double numberOfRegisters;
+	private Integer numberOfRegisters;
 
-	public XML1019Header(int year, int CptCode, int format) {
-
+	public XML1019Header(int year, int CptCode, int format, int version, int shippingNumber, Calendar shippingDate,
+			Calendar initialDate, Calendar finalDate, double totalValue, int numberOfRegisters) {
+		this.year = new Integer(year);
+		this.CptCode = new Integer(CptCode);
+		this.format = new Integer(format);
+		this.version = new Integer(version);
+		this.shippingNumber = new Integer(shippingNumber);
+		this.shippingDate = shippingDate;
+		this.initialDate = initialDate;
+		this.finalDate = finalDate;
+		this.totalValue = new Double(totalValue);
+		this.numberOfRegisters = new Integer(numberOfRegisters);
 		loadInvariants();
 	}
 
@@ -105,6 +115,86 @@ public class XML1019Header {
 		assert numberOfRegisters >= 0
 				&& numberOfRegisters < 5000 : "Number of registers must be between zero (0) and five thousand."; // Attachment
 		// restriction.
+	}
+
+	public Integer getYear() {
+		return year;
+	}
+
+	public void setYear(Integer year) {
+		this.year = year;
+	}
+
+	public Integer getCptCode() {
+		return CptCode;
+	}
+
+	public void setCptCode(Integer cptCode) {
+		CptCode = cptCode;
+	}
+
+	public Integer getFormat() {
+		return format;
+	}
+
+	public void setFormat(Integer format) {
+		this.format = format;
+	}
+
+	public Integer getVersion() {
+		return version;
+	}
+
+	public void setVersion(Integer version) {
+		this.version = version;
+	}
+
+	public Integer getShippingNumber() {
+		return shippingNumber;
+	}
+
+	public void setShippingNumber(Integer shippingNumber) {
+		this.shippingNumber = shippingNumber;
+	}
+
+	public Calendar getShippingDate() {
+		return shippingDate;
+	}
+
+	public void setShippingDate(Calendar shippingDate) {
+		this.shippingDate = shippingDate;
+	}
+
+	public Calendar getInitialDate() {
+		return initialDate;
+	}
+
+	public void setInitialDate(Calendar initialDate) {
+		this.initialDate = initialDate;
+	}
+
+	public Calendar getFinalDate() {
+		return finalDate;
+	}
+
+	public void setFinalDate(Calendar finalDate) {
+		this.finalDate = finalDate;
+	}
+
+	public Double getTotalValue() {
+		return totalValue;
+	}
+
+	public void setTotalValue(Double totalValue) {
+		this.totalValue = totalValue;
+	}
+
+	public Integer getNumberOfRegisters() {
+		return numberOfRegisters;
+	}
+
+	public void setNumberOfRegisters(Integer numberOfRegisters) {
+		this.numberOfRegisters = numberOfRegisters;
 	}
 
 }
