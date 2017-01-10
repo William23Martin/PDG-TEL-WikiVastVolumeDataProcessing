@@ -9,11 +9,10 @@ package pdg.tel.vvd.test.usecase.requirement.xml1019file.model.constants;
  */
 public enum XML1019FileConstants {
 	;
-	// File name constants.
-	public final static String ARCHIVO_NOMBRE_PREFIJO = "Dmuisca";// Attachment
+
+	// XML 1019 File Name constants.
+	public final static String ARCHIVO_NOMBRE_PREFIJO = "Dmuisca_";// Attachment
 																	// restriction.
-	public final static String ARCHIVO_NOMBRE_SEPARADOR = "_";// Attachment
-																// restriction.
 	public final static String ARCHIVO_NOMBRE_CONCEPTO_INSERCION = "01";// Attachment
 																		// restriction.
 	public final static String ARCHIVO_NOMBRE_CONCEPTO_REEMPLAZO = "02";// Attachment
@@ -23,7 +22,7 @@ public enum XML1019FileConstants {
 	public final static String ARCHIVO_NOMBRE_VERSION = "09";// Attachment
 																// restriction.
 
-	// Header constants.
+	// XML 1019 File Header constants.
 	public final static String ARCHIVO_ENCABEZADO_RAIZ = "mas";// Attachment
 																// restriction.
 	public final static String ARCHIVO_ENCABEZADO_ELEMENTO = "Cab";// Attachment
@@ -36,4 +35,9 @@ public enum XML1019FileConstants {
 	// restriction.
 	public final static String ARCHIVO_ENCABEZADO_FORMATO_FECHA_FINAL = "AAAA-MM-DD";// Attachment
 	// restriction.
+
+	// XML 1019 File Content constants.
+	public final static String ARCHIVO_CONTENIDO_ELEMENTO = "movcta";// Attachment
+	// restriction.
+	
 }
